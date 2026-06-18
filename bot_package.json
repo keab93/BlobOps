@@ -1,0 +1,11 @@
+{
+  "name": "agar-io-bot",
+  "version": "1.0.0",
+  "description": "Bot client for agar.io clone",
+  "scripts": {
+    "start": "node src/bot/bot.js"
+  },
+  "dependencies": {
+    "socket.io-client": "^4.0.0"
+  }
+}
