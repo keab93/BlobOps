@@ -67,12 +67,17 @@ socket.on('welcome', (playerSettings, gameSizes) => {
 // 3. Move the bot randomly
 setInterval(() => {
     if (socket.connected) {
-        // agar-clone uses delta vectors (offset from center of screen) 
-        // to determine the direction the player wants to go.
-        botConfig.target.x = (Math.random() - 0.5) * botConfig.screenWidth;
-        botConfig.target.y = (Math.random() - 0.5) * botConfig.screenHeight;
-
-        // '0' is the event identifier for "playerSendTarget"
+        if (gameState.foods.length > 0) {
+            const nearestFood = findNearestFood();
+            if (nearestFood) {
+                botConfig.target.x = nearestFood.x - gameState.player.x;
+                botConfig.target.y = nearestFood.y - gameState.player.y;
+            }
+        } else {
+            // If no food, move randomly
+            botConfig.target.x = (Math.random() - 0.5) * botConfig.screenWidth;
+            botConfig.target.y = (Math.random() - 0.5) * botConfig.screenHeight;
+        }
         socket.emit('0', botConfig.target); 
     }
 }, 100); // 100ms matches the heartbeat of a typical client
