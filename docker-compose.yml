@@ -1,6 +1,21 @@
-version: "2"
+version: "3.8"
+
 services:
-    agar:
-        build: .
-        ports:
-            - 3000:3000
+  # 1. The Game Server Service
+  agar:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+
+  # 2. The Bot Client Service
+  bot:
+    build: 
+      context: .
+      dockerfile: Dockerfile_bot
+    depends_on:
+      - agar
+    # (Optional) Mount the config file for hot-reloading without reconnecting
+    # volumes:
+    #   - ./src/bot/config.json:/usr/src/app/src/bot/config.json

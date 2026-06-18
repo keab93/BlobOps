@@ -1,0 +1,17 @@
+# Use a minimal Node.js Alpine image
+FROM node:lts-alpine
+
+# Set the working directory inside the container
+WORKDIR /usr/src/app
+
+# Copy the bot's package file and rename it to package.json for npm
+COPY bot_package.json ./package.json
+
+# Install dependencies (such as socket.io-client)
+RUN npm install
+
+# Copy the bot source code into the container
+COPY src/bot/js ./bot
+
+# Run the bot
+CMD ["node", "./bot/bot.js"]
