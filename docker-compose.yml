@@ -1,15 +1,12 @@
 version: "3.8"
 
 services:
-  # 1. The Game Server Service
   agar:
     build: 
       context: .
       dockerfile: Dockerfile
     ports:
       - "3000:3000"
-
-  # 2. The Bot Client Service
   bot:
     build: 
       context: .

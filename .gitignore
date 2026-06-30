@@ -1,5 +1,8 @@
 node_modules
 npm-debug.log
 .idea
+.env
 client/bower_components
 bin
+jenkins/jenkins_data
+jenkins/.env
