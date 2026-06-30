@@ -4,7 +4,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.jenkins-ci.plugins</groupId>
   <artifactId>script-security</artifactId>
-  <version>1402.v94c9ce464861</version>
+  <version>1402.1405.vc96e74964250</version>
   <packaging>hpi</packaging>
   <name>Script Security Plugin</name>
   <description>The Jenkins Plugins Parent POM Project</description>
@@ -19,7 +19,7 @@
   <scm>
     <connection>scm:git:https://github.com/jenkinsci/script-security-plugin.git</connection>
     <developerConnection>scm:git:git@github.com:jenkinsci/script-security-plugin.git</developerConnection>
-    <tag>94c9ce46486198c13d70c330587c74952e69b15a</tag>
+    <tag>c96e7496425031182b6fc11ef1c55b9ae4fa7cc2</tag>
     <url>https://github.com/jenkinsci/script-security-plugin</url>
   </scm>
   <distributionManagement>
@@ -36,7 +36,7 @@
     <dependency>
       <groupId>org.kohsuke</groupId>
       <artifactId>groovy-sandbox</artifactId>
-      <version>1.34</version>
+      <version>1.34.1</version>
       <scope>compile</scope>
       <exclusions>
         <exclusion>

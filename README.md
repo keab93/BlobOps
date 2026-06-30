@@ -7,5 +7,7 @@ The project will also include a CI/CD pipeline to automate the building, testing
 ## Technologies Used
 
 -Docker Compose: For defining and running multi-container Docker applications.
+
 -CI/CD Tools: To automate the build, test, and deployment processes (e.g., Jenkins, GitHub Actions).
+
 -Kubernetes: For container orchestration and management (planned for future implementation).

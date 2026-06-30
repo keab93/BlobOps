@@ -4,7 +4,7 @@
   <description></description>
   <keepDependencies>false</keepDependencies>
   <properties/>
-  <definition class="org.jenkinsci.plugins.workflow.cps.CpsFlowDefinition" plugin="workflow-cps@4331.v9d06ed4658ff">
+  <definition class="org.jenkinsci.plugins.workflow.cps.CpsFlowDefinition" plugin="workflow-cps@4331.4333.v50a_b_076c5199">
     <script>#!/bin/bash
 
 echo &quot;Triggering local Jenkins build...&quot;
