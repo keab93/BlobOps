@@ -8,6 +8,6 @@ The project also includes a CI/CD pipeline to automate the building, testing, an
 
 -Docker Compose: For defining and running multi-container Docker applications.
 
--CI/CD Tools: To automate the build, test, and deployment processes (e.g., Jenkins, GitHub Actions).
+-CI/CD Tools such as Jenkins to automate the build, test, and deployment processes
 
 -Kubernetes: For container orchestration and management (planned for future implementation).
