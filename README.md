@@ -4,7 +4,7 @@ This project uses a simple online game as the playground for implementing and de
 
 The project also includes a CI/CD pipeline to automate the building, testing, and deployment of the application. I plan to deploy the application on Kubernetes to demonstrate container orchestration and management in a production-like environment.
 
-## Technologies Used
+### Technologies Used
 
 -Docker Compose: For defining and running multi-container Docker applications.
 
