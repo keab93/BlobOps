@@ -1,9 +1,11 @@
 FROM jenkins/jenkins:lts
 USER root
 
+RUN curl -fsSL https://get.docker.com | sh
+
 ARG DOCKER_GID
 
-RUN groupadd -g ${DOCKER_GID} docker && \
+RUN groupmod -g ${DOCKER_GID} docker && \
     usermod -aG docker jenkins
 
 USER jenkins
