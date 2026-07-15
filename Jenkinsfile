@@ -6,6 +6,19 @@ pipeline {
                 checkout scm
             }
         }
+        stage('Unit Test') {
+                agent {
+                    docker {
+                        image 'node:20-alpine'
+                        args '-u root'
+                        reuseNode true
+                    }
+                }
+                steps {
+                    sh 'npm ci'
+                    sh 'npm test'
+                }
+        }
         stage('Rebuild & Deploy') {
             steps {
                 sh 'docker compose down'

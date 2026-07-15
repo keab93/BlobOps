@@ -1,4 +1,4 @@
-# Devops Project using Docker Compose, CI/CD and Kubernetes (eventually)
+# Devops Project using Docker Compose, CI/CD and Kubernetes
 
 This project uses a simple online game as the playground for implementing and demonstrating DevOps tools and practices. Using Docker Compose, I will spin up bot players of the game and a web server to host the game. The bots will be configured to play against each other, and the web server will provide a user interface to observe the game in real-time.
 
