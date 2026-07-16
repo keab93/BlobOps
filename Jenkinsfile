@@ -7,7 +7,7 @@ pipeline {
             }
         }
         stage('Unit Test') {
-                agent {
+                steps {
                     sh'''
                     echo "FROM node:20-alpine
                     WORKDIR /app
