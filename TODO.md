@@ -6,10 +6,11 @@
   - [] line 24, break out many of these GameControls into separate classes.
 - [] Jenkins
   - [] Set up distributed builds through agent or cloud.
+  - [] Fix hook
 - [] Docker Compose
   - [] Test outcomes for container health after long runtimes.
   - [] Remove obsolete syntax from docker-compose.yml
 - [] agar.io-clone/test
   - [] Add server tests
-  - [] Categorise and sequence test suite
+  - [x] Categorise and sequence test suite
   - [] Add bot tests

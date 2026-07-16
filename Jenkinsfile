@@ -31,8 +31,10 @@ pipeline {
             steps {
 		sh(script: '''#!/usr/bin/env bash
 set -euxo pipefail
+agar_container=$(docker compose ps -q agar)
+[[ -n $agar_container ]] || { echo "agar container is not running"; exit 1; }
 for i in $(seq 1 10); do
-    code=$(docker run --rm curlimages/curl -s -o /dev/null -w '%{http_code}' http://agar:3000/ || true)
+    code=$(docker run --rm --network container:"$agar_container" curlimages/curl -s -o /dev/null -w '%{http_code}' http://localhost:3000/ || true)
     printf 'Attempt %s: HTTP %s\n' "$i" "$code"
     if [ "$code" = 200 ]; then
         printf 'Smoke test passed!\n'
