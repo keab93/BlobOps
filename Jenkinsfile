@@ -8,15 +8,18 @@ pipeline {
         }
         stage('Unit Test') {
                 agent {
-                    docker {
-                        image 'node:20-alpine'
-                        args '-u root'
-                        reuseNode true
-                    }
-                }
-                steps {
-                    sh 'npm ci'
-                    sh 'npm test'
+                    sh'''
+                    echo "FROM node:20-alpine
+                    WORKDIR /app
+                    COPY package*.json ./
+                    RUN npm install
+                    COPY . .
+                    CMD [\\"npm\\", \\"test\\"]" > Dockerfile.test
+                    '''
+                    sh 'docker build -t blobops-test -f Dockerfile.test .'
+
+                    sh 'docker run --rm blobops-test'
+
                 }
         }
         stage('Rebuild & Deploy') {
