@@ -32,7 +32,7 @@ pipeline {
 		sh(script: '''#!/usr/bin/env bash
 set -euxo pipefail
 for i in $(seq 1 10); do
-    code=$(curl -s -o /dev/null -w "%{http_code}" http://localhost:3000/|| true)
+    code=$(docker run --rm --network agarioclone_default curlimages/curl -s -o /dev/null -w '%{http_code}' http://agar:3000/ || true)
     printf 'Attempt %s: HTTP %s\n' "$i" "$code"
     if [ "$code" = 200 ]; then
         printf 'Smoke test passed!\n'
